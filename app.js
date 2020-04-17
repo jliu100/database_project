@@ -17,8 +17,7 @@ app.use(express.static('public'));  //public folder, use for styling
 
 
 
-// cd C:\Program Files\MySQL\MySQL Server 8.0\bin                            
-// mysql -h testinstance.ct7lrszoc875.us-east-1.rds.amazonaws.com -P 3306 -u admin -p  
+
 
 // create table items(barcode_id int auto_increment primary key, item_name varchar(20), img_url varchar(200), department varchar(20), taxable varchar(5), unit_price double, price_unit varchar(5), case_price double , num_lb_in_case double, cases_in_stock int);    
 // insert into items (item_name, img_url,department,taxable,unit_price,price_unit,case_price,num_lb_in_case,cases_in_stock) values ('','','Fruit','No',0.60,'Each', 16, 30,15);   
