@@ -1,5 +1,5 @@
 
-<form action='/shoppingcart' method='GET' class="buttonD">
+<form action='/shoppingcart/1' method='GET' class="buttonD">
 	<button>My Shopping Cart </button>
 </form>
 <h1> Welcome {{username}}</h1>                               
@@ -13,7 +13,7 @@
 		{{#each items}}
 			<div class="col-xs-12 col-sm-3">
 				<h2 style=" font-size: 12px">{{item_name}}</h2>
-				<a href="/item/{{barcode_id}}">
+				<a href="/itemlist/{{barcode_id}}">
 				<img src={{img_url}} class="bootstrapImag" width=200  height=170 alt="Food image">
 				</a>
 				
@@ -21,6 +21,7 @@
 		{{/each}}
 	</div>
 	
+
 
 </div>
 
