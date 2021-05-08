@@ -1,0 +1,71 @@
+
+<table border="1">    
+		<thead> 
+			      
+				<tr>           
+					<th>Item</th>
+					<th>Image</th>
+					<th>Unit Price</th>
+					<th>Price Unit</th>
+					<th>Case Price</th>
+					<th>Number in case</th>
+					<th>Cases in Stock</th>
+					<th>Remaining not in case</th>
+					<th>Department</th>
+					<th>Taxable</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+		</thead>
+	<tbody>	
+		{{#each data}}
+			<tr>			
+				<td>{{item_name}}</td>			 
+				<td>
+					<img src={{img_url}}  width=100  height=85 alt="Food image">
+				</td>
+				<td>{{unit_price}}</td> 
+
+				<td>{{price_unit}} </td> 	
+				<td>{{case_price}}</td> 
+				<td>{{num_lb_in_case}} </td> 	
+				<td>{{cases_in_stock}}</td>
+				<td>{{remain_not_in_case}} </td> 	
+				<td>{{department}} </td> 	
+				<td>{{taxable}}</td> 
+				<td>
+
+					<form action='/companyAdd/{{barcode_id}}' method='POST'>
+						New Imported Date:<input type="text" name="dateImported" placeholder="YY-MM-DD" required="">	<br>
+						Cases Imported: <input type="number" name="addCases" step="1" required>	
+						<button>Add</button>
+					</form>
+				</td>
+				<td>
+					<a href="/read/{{barcode_id}}">Read more</a>
+				</td>
+				<td>
+					<form action="/graph/{{barcode_id}}" method=POST>
+						Graph # of {{data.item_name}} sold between:<br>
+						<input type="text" name="startDate"> to
+						<input type="text" name="endDate">
+						<button>Graph</button>
+					</form>
+				</td>
+
+				<td>
+					<form action="/monthgraph/{{barcode_id}}" method=POST>
+						<button>Month Graph</button>
+					</form>
+				</td>
+			</tr>
+		{{/each}}	
+					
+	</tbody>
+</table>
+
+<br>
+<br>
+<a href="/addnewItems">Add New Items...</a>
